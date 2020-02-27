@@ -29,7 +29,7 @@ RUN ./configure \
     --with-quotas \
     --with-shared-modules=idmap_rid,idmap_ad,idmap_hash,idmap_adex \
     --with-syslog \
-    --with-utmp\
+    --with-utmp \
     --with-dnsupdate
-RUN make \ 
+RUN make \
     && make install
