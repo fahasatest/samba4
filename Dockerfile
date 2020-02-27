@@ -31,5 +31,5 @@ RUN ./configure \
     --with-syslog \
     --with-utmp \
     --with-dnsupdate
-RUN make \
+RUN make \ 
     && make install
