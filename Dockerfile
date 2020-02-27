@@ -1,12 +1,9 @@
-FROM centos:centos7.7.1908
+FROM oraclelinux:7.7
 EXPOSE 135 137/udp 138/udp 139 389 389/udp 445 464 636 3268 3269
 WORKDIR \root\app\samba
 RUN yum update -y \
     && yum groups -y install "Development Tools" \
-    && yum -y install iniparser libldb libtalloc libtdb libtevent python-devel gnutls-devel libacl-devel openldap-devel pam-devel readline-devel krb5-devel cups-devel \
-    && curl -O https://download.samba.org/pub/samba/stable/samba-4.8.3.tar.gz \
-    && tar zxvf samba-4.8.3.tar.gz \
-    && cd samba-4.8.3
+    && yum -y install iniparser libldb libtalloc libtdb libtevent python-devel gnutls-devel libacl-devel openldap-devel pam-devel readline-devel krb5-devel cups-devel
 RUN ./configure \
     --prefix=/usr \
     --localstatedir=/var \
