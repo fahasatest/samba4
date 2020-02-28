@@ -2,11 +2,10 @@ FROM oraclelinux:7.7
 EXPOSE 135 137/udp 138/udp 139 389 389/udp 445 464 636 3268 3269
 RUN yum update -y \
     && yum groups -y install "Development Tools" \
-    && yum -y install iniparser libldb libtalloc libtdb libtevent python-devel gnutls-devel libacl-devel openldap-devel pam-devel readline-devel krb5-devel cups-devel \
+    && yum -y install iniparser libldb libtalloc libtdb libtevent python-devel gnutls-devel libacl-devel openldap-devel pam-devel readline-devel krb5-devel cups-devel
 ADD https://download.samba.org/pub/samba/stable/samba-4.8.3.tar.gz /root/app/samba4/samba-4.8.3.tar.gz
 WORKDIR /root/app/samba4
-RUN tar zxvf samba-4.8.3.tar.gz \
-    && cd samba-4.8.3
+RUN tar zxvf samba-4.8.3.tar.gz
 WORKDIR /root/app/samba4/samba-4.8.3
 RUN ./configure \
     --prefix=/usr \
