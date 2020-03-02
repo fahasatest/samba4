@@ -30,4 +30,4 @@ RUN ./configure \
     --with-utmp \
     --with-dnsupdate
 RUN make \
-    && make install 
+    && make install
